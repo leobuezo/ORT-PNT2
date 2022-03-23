@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos en Javascript</title>
+</head>
+<body>
+    <script>
+        var variableGlobal = 1234
+        console.log(variableGlobal)
+        console.log(variableGlobal, typeof variableGlobal)
+
+        // tipo array (object)
+        // array homogeneo
+        var arrayNumeros = [10, 11, 12, 13, 14, 15]
+        var arrayNumerosComoObject = new Array(10, 11, 12, 13, 14, 15)
+        console.log(arrayNumeros, typeof arrayNumeros, Array.isArray(arrayNumeros))
+        console.log(arrayNumerosComoObject, typeof arrayNumerosComoObject, Array.isArray(arrayNumerosComoObject))
+
+        // array heterogeneo
+        var arrayPersona = ['Juan', 'Perez', 32, true, function(){console.log('Hola!')}]
+        console.log(arrayPersona, typeof arrayPersona, Array.isArray(arrayPersona))
+        arrayPersona[4]()
+
+        // tipo function
+        var miFunction = function () {}
+        console.log(miFunction, typeof miFunction)
+
+        // acceso a los elementos de array por su índice
+        console.log(
+            'La persona se llama ' + arrayPersona[0] + ' ' + arrayPersona[1] + 
+        'y tiene ' + arrayPersona[2] + ' años.'
+        )
+        typeof arrayPersona[4] == 'function' ? arrayPersona[4]() : console.log('no es función.')
+
+        // https://www.w3schools.com/jsref/jsref_obj_array.asp
+        // https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+        // tipo object
+        var objetoPersona = {
+            nombre: 'Juan', 
+            apellido: 'Perez', 
+            edad: 32, 
+            acceso: true, 
+            accion: function(){console.log('Hola!')}
+        }
+        console.log(objetoPersona['nombre'] + ' ' + objetoPersona.apellido)
+        objetoPersona.accion()
+        objetoPersona['accion']()
+        
+</script>
+    
+</body>
+</html>
