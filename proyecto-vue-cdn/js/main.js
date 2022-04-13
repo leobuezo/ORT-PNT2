@@ -1,5 +1,24 @@
 console.warn( document.querySelector('title').textContent);
 
+Vue.component('contador', {
+    data() {
+        return {
+            cont: this.init || 0,
+        }
+    },
+    props: ['init'],
+    methods: {
+        contar() {
+            this.cont++
+        }
+    },
+    template: `
+    <span>
+        <button class="btn btn-success my-2 mr-2" @click="contar()" > contador {{ cont}} </button>
+    </span>
+    `
+})
+
 new Vue({
     el: '#app',
     data: {
@@ -22,7 +41,17 @@ new Vue({
     methods: {
         saludar(event) { alert('Holaaa!!') },
         incrementar(event) { this.contador3++ },
-        mostrarContador3() { return this.contador3}
+        mostrarContador3() { return this.contador3},
+        agregarAlumno() {
+            const alumno = {
+                nombre: 'pipo',
+                apellido: 'peluso',
+                edad: 35,
+                curso: false,
+                foto: 'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png'
+            }
+            this.alumnos.push(alumno)
+        },
     },
     computed: {
         calcularAlunosCurso() {

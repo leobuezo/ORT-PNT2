@@ -110,6 +110,11 @@
                 </h4>
             </div>
 
+            <h4><u>Agregar alumno</u></h4>
+            <button class="btn btn-warning my-3" @click="agregarAlumno()">
+                {{ 'Agregar alumno' }}
+            </button>
+
             <div class="media alter alert-warning" v-for="(alumno, index) in alumnos">
                 <img class="mr-3" :src="alumno.foto" width="150" :alt="alumno.nombre">
                 <div class="media-body ml-3">
@@ -123,7 +128,16 @@
               </div>
         </div>
     </div>
+            <!------------------------------------------------------->
+            <!------------------Componentes-------------------------->
+            <!------------------------------------------------------->
 
+            <h4><u>Componentes</u></h4>
+            <contador init="0"></contador>
+        
+    <div>
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <!--     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
 
